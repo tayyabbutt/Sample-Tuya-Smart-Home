@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#253864</color>
+    <color name="colorPrimaryDark">#0B0F17</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="darkAppColor">#0B0F17</color>
+    <color name="lightAppColor">#253864</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="darkGrey">#7A7A7A</color>
+    <color name="grey">#ADADAD</color>
+    <color name="lightGrey">#DADADA</color>
+    <color name="disabledButton">#77253864</color>
+    <color name="red">#F72A2A</color>
+</resources>
