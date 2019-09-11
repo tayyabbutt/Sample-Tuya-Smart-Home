@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wbm.smart">
+    package="com.smart.wbm">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="com.wbm.smart.WbmSmartApp"
+        android:name="com.smart.wbm.WbmSmartApp"
         android:allowBackup="true"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
@@ -25,33 +25,33 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.wbm.smart.activities.gHome.MainDashBoardHome"
+            android:name="com.smart.wbm.activities.gHome.MainDashBoardHome"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.DList"
+            android:name="com.smart.wbm.activities.gHome.DList"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.ShowHomeActivity"
+            android:name="com.smart.wbm.activities.gHome.ShowHomeActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.AddAndManageActivity"
+            android:name="com.smart.wbm.activities.gHome.AddAndManageActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.AddHomeActivity"
+            android:name="com.smart.wbm.activities.gHome.AddHomeActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.SmartDeviceListActivity"
+            android:name="com.smart.wbm.activities.gHome.SmartDeviceListActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name="com.wbm.smart.activities.gHome.DeviceListActivity"
+            android:name="com.smart.wbm.activities.gHome.DeviceListActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".activities.gHome.AddDeviceToRoomActivity"
+            android:name="com.smart.wbm.activities.gHome.AddDeviceToRoomActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
 
 
         <activity
-            android:name="com.wbm.smart.activities.gHome.SplashActivity"
+            android:name="com.smart.wbm.activities.gHome.SplashActivity"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,11 +61,11 @@
         </activity>
 
         <activity
-            android:name="com.wbm.smart.activities.gHome.RegisterUser"
+            android:name="com.smart.wbm.activities.gHome.RegisterUser"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <activity
-            android:name=".activities.gHome.WifiActivity"
+            android:name="com.smart.wbm.activities.gHome.WifiActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
 
 
@@ -77,21 +77,21 @@
             android:value="djxfvn87uamypkthvkedj9tanvk5vsrh" />
 
         <activity
-            android:name="com.wbm.smart.activities.gHome.LoginActivity"
+            android:name="com.smart.wbm.activities.gHome.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
         <activity
-            android:name=".activities.gHome.SwitchActivity"
+            android:name="com.smart.wbm.activities.gHome.SwitchActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
 
         <activity
-            android:name=".activities.gHome.MeActivity"
+            android:name="com.smart.wbm.activities.gHome.MeActivity"
             android:label="User Info"/>
         <activity
-            android:name=".activities.gHome.AboutUs"
+            android:name="com.smart.wbm.activities.gHome.AboutUs"
             android:label="User Info"/>
         <activity
-            android:name=".activities.gHome.ContactUs"
+            android:name="com.smart.wbm.activities.gHome.ContactUs"
             android:label="Contact Us"/>
 
 
