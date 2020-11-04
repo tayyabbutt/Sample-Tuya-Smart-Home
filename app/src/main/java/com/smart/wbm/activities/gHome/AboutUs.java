@@ -24,7 +24,7 @@ public class AboutUs extends AppCompatActivity {
         aboutWeb.getSettings().setJavaScriptEnabled(true);
         aboutWeb.getSettings().setDomStorageEnabled(true);
         aboutWeb.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
-        aboutWeb.loadUrl(ApiKeys.BASE_URL+"aboutUs");
+        aboutWeb.loadUrl(ApiKeys.BASE_URL+"about");
 
     }
 

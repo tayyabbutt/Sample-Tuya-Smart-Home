@@ -1,4 +1,4 @@
-package com.smart.wbm.activities;
+package com.smart.wbm.activities.tuyaOldScreens;
 
 import android.os.Bundle;
 import android.view.View;

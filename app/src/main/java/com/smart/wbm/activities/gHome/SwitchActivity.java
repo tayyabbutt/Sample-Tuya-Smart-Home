@@ -14,10 +14,10 @@ import androidx.core.content.ContextCompat;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bumptech.glide.Glide;
+import com.smart.wbm.R;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.sdk.api.IResultCallback;
 import com.tuya.smart.sdk.api.ITuyaDevice;
-import com.smart.wbm.R;
 
 import java.util.HashMap;
 
@@ -69,7 +69,6 @@ public class SwitchActivity extends AppCompatActivity {
                 } else if (isClick == true) {
                     isClick = false;
                     Glide.with(SwitchActivity.this).load(ContextCompat.getDrawable(SwitchActivity.this, R.drawable.switch_off)).into(iv_switch);
-
                     HashMap<String, Object> dps = new HashMap<>();
                     dps.put("1", false);
                     mDevice.publishDps(JSONObject.toJSONString(dps), new IResultCallback() {

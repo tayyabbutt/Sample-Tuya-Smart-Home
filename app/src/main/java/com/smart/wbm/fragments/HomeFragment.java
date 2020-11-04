@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.smart.wbm.R;
-import com.smart.wbm.activities.DashBoardActivity;
-import com.smart.wbm.activities.DevicesActivity;
+import com.smart.wbm.activities.tuyaOldScreens.DashBoardActivity;
+import com.smart.wbm.activities.tuyaOldScreens.DevicesActivity;
 import com.smart.wbm.utils.Utility;
 
 

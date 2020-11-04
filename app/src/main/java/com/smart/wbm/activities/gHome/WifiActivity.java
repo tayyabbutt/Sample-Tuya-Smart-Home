@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
+import com.smart.wbm.R;
+import com.smart.wbm.utils.Utility;
 import com.tuya.smart.android.common.utils.WiFiUtil;
 import com.tuya.smart.home.sdk.TuyaHomeSdk;
 import com.tuya.smart.home.sdk.bean.HomeBean;
@@ -25,8 +27,6 @@ import com.tuya.smart.sdk.api.ITuyaActivatorGetToken;
 import com.tuya.smart.sdk.api.ITuyaSmartActivatorListener;
 import com.tuya.smart.sdk.bean.DeviceBean;
 import com.tuya.smart.sdk.enums.ActivatorModelEnum;
-import com.smart.wbm.R;
-import com.smart.wbm.utils.Utility;
 
 import java.util.List;
 
@@ -149,13 +149,14 @@ public class WifiActivity extends AppCompatActivity implements ITuyaSmartActivat
     }
 
     @Override
-    public void onError(String errorCode, String errorMsg) {
+    public void onStep(String step, Object data) {        // device found
         hideProgress();
-        Toast.makeText(WifiActivity.this, "" + errorCode + " " + errorMsg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(WifiActivity.this, "Step " + step, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
-    public void onActiveSuccess(DeviceBean devResp) {
+    public void onActiveSuccess(DeviceBean devResp) {   //initializing device
         hideProgress();
         mTuyaActivator.stop();
         Bundle bundle = new Bundle();
@@ -166,9 +167,10 @@ public class WifiActivity extends AppCompatActivity implements ITuyaSmartActivat
     }
 
     @Override
-    public void onStep(String step, Object data) {
+    public void onError(String errorCode, String errorMsg) {
         hideProgress();
-        Toast.makeText(WifiActivity.this, "Step " + step, Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(WifiActivity.this, "" + errorCode + " " + errorMsg, Toast.LENGTH_SHORT).show();
     }
+
+
 }

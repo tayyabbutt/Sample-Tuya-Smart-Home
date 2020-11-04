@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.smart.wbm.R;
-import com.smart.wbm.activities.ScenerioActionActivity;
+import com.smart.wbm.activities.tuyaOldScreens.ScenerioActionActivity;
 import com.smart.wbm.utils.Utility;
 
 public class ScenerioFragment extends Fragment {

@@ -22,14 +22,6 @@ import com.kaopiz.kprogresshud.KProgressHUD;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.api.ITuyaHomeChangeListener;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.bean.RoomBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
-import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
-import com.tuya.smart.sdk.bean.DeviceBean;
-import com.tuya.smart.sdk.bean.GroupBean;
 import com.smart.wbm.R;
 import com.smart.wbm.adapters.DeviceHomeAdapter;
 import com.smart.wbm.adapters.DevicesHomeAdapter;
@@ -45,6 +37,14 @@ import com.smart.wbm.models.Room;
 import com.smart.wbm.models.RoomsBean;
 import com.smart.wbm.utils.MyDialog;
 import com.smart.wbm.utils.Utility;
+import com.tuya.smart.home.sdk.TuyaHomeSdk;
+import com.tuya.smart.home.sdk.api.ITuyaHomeChangeListener;
+import com.tuya.smart.home.sdk.bean.HomeBean;
+import com.tuya.smart.home.sdk.bean.RoomBean;
+import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
+import com.tuya.smart.home.sdk.callback.ITuyaHomeResultCallback;
+import com.tuya.smart.sdk.bean.DeviceBean;
+import com.tuya.smart.sdk.bean.GroupBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,8 +110,6 @@ public class MainDashBoardHome extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
-        /*FrameLayout contentFrameLayout = findViewById(R.id.frame_hloder);
-        getLayoutInflater().inflate(R.layout.main_dashboard_home_layout, contentFrameLayout);*/
 
 
         horizontalRoomView = findViewById(R.id.roomRecyclerView);
@@ -340,19 +338,14 @@ public class MainDashBoardHome extends AppCompatActivity {
                 for (RoomBean roomBean : homeBean.getRooms()) {
                     beans.add(getRooms(roomBean));
                 }
-
                 TuyaRoomAdapter adapter = new TuyaRoomAdapter(MainDashBoardHome.this, beans, new OnRoomClickToAddDevice() {
                     @Override
                     public void onRoomClickListner(final RoomsBean roomsBean) {
-
-                        // getTuyaCurrentHomeDetail(homeId);
                         if (roomsBean.getDeviceList().size() != 0) {
                             getTuyaDevicesAgainstRoom(roomsBean);
                         } else {
                             getTuyaCurrentHomeDetail(homeId);
                         }
-
-                        //  getTuyaCurrentHomeDetail(roomsBean.getRoomId());
                         addDeviceBtn.setEnabled(true);
                         addDeviceBtn.setBackground(ContextCompat.getDrawable(MainDashBoardHome.this, R.drawable.button_background));
 
@@ -393,7 +386,7 @@ public class MainDashBoardHome extends AppCompatActivity {
                     }
                 });
                 horizontalRoomView.setAdapter(adapter);
-               // deviceAdapter.notifyDataSetChanged();
+                // deviceAdapter.notifyDataSetChanged();
                 //             getTuyaCurrentHomeDetail();
 
             }
@@ -453,30 +446,18 @@ public class MainDashBoardHome extends AppCompatActivity {
     }
 
     private void getTuyaHomeList() {
-        //   showProgress();
         TuyaHomeSdk.getHomeManagerInstance().queryHomeList(new ITuyaGetHomeListCallback() {
             @Override
             public void onSuccess(List<HomeBean> list) {
-                //        hideProgress();
                 if (!list.isEmpty()) {
                     SmartManager.getInstance().saveListofTuyaHome(list);
-                    HomeBean homeBean = list.get(0);
-                   /* mCurrentHomeId = homeBean.getHomeId();
-                    getTuyaCurrentHomeDetail();*/
-                    //mCurrentRoomId = homeBean.getRooms().get(0).getRoomId();
-
-                    /*adapter = new DeviceHomeAdapter(con,list);
-                    deviceRecyclerView.setAdapter(adapter);*/
-
                 } else {
                     Toast.makeText(MainDashBoardHome.this, "Success", Toast.LENGTH_SHORT).show();
-
                 }
             }
 
             @Override
             public void onError(String s, String s1) {
-                //            hideProgress();
                 Toast.makeText(MainDashBoardHome.this, s + "\n" + s1, Toast.LENGTH_LONG).show();
             }
         });

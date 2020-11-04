@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.smart.wbm.R;
-import com.smart.wbm.activities.DashBoardActivity;
+import com.smart.wbm.activities.tuyaOldScreens.DashBoardActivity;
 
 public class MyProfileFragment extends Fragment {
     DashBoardActivity parentActivity;

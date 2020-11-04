@@ -1,4 +1,4 @@
-package com.smart.wbm.activities;
+package com.smart.wbm.activities.tuyaOldScreens;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;

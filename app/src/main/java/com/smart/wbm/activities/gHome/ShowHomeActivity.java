@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
-import com.tuya.smart.home.sdk.TuyaHomeSdk;
-import com.tuya.smart.home.sdk.bean.HomeBean;
-import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
 import com.smart.wbm.R;
 import com.smart.wbm.adapters.TuyaHomeAdapter;
 import com.smart.wbm.models.HomeModel;
 import com.smart.wbm.recyclerItemDecorator.LinearDividerItemDecoration;
 import com.smart.wbm.utils.Utility;
+import com.tuya.smart.home.sdk.TuyaHomeSdk;
+import com.tuya.smart.home.sdk.bean.HomeBean;
+import com.tuya.smart.home.sdk.callback.ITuyaGetHomeListCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +104,6 @@ public class ShowHomeActivity extends AppCompatActivity {
                 hideProgress();
                 if (!list.isEmpty()) {
                     HomeBean homeBean = list.get(0);
-
                     TuyaHomeAdapter adapter = new TuyaHomeAdapter(ShowHomeActivity.this, list);
                     homeRecyclerView.setAdapter(adapter);
 
@@ -145,7 +144,6 @@ public class ShowHomeActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<List<HomeModel>> call, Throwable t) {
                     hideProgress();
-                    Toast.makeText(ShowHomeActivity.this, "server error", Toast.LENGTH_SHORT).show();
 
                 }
             });
